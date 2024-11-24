@@ -577,7 +577,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Push me and then just kush me
+  m_Text: Load Screen
 --- !u!222 &721004557
 CanvasRenderer:
   m_ObjectHideFlags: 0
