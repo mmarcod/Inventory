@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using UnityEngine;
 
 public class SC_InventorySystem : MonoBehaviour
@@ -123,7 +123,7 @@ public class SC_InventorySystem : MonoBehaviour
 
                     for (int i = 0; i < availableItems.Length; i++)
                     {
-                        if (availableItems[i].itemName == itemTmp.itemName)
+                        if (availableItems[i].name == itemTmp.name)
                         {
                             detectedItem = itemTmp;
                             detectedItemIndex = i;
@@ -174,7 +174,7 @@ public class SC_InventorySystem : MonoBehaviour
                             }
                             else
                             {
-                                GUILayout.Box(availableItems[itemSlots[i + a]].itemName,
+                                GUILayout.Box(availableItems[itemSlots[i + a]].name,
                                     GUILayout.Width(95), GUILayout.Height(95));
                             }
                         }
@@ -218,15 +218,14 @@ public class SC_InventorySystem : MonoBehaviour
             }
             else
             {
-                GUI.Box(new Rect(Input.mousePosition.x + dragOffset.x, Screen.height -
-                    Input.mousePosition.y + dragOffset, 95, 95),
-                    availableItems[itemSlots[itemIndexToDrag]].itemName);
+                GUI.Box(new Rect(Input.mousePosition.x + dragOffset.x, Screen.height - Input.mousePosition.y + dragOffset.y, 95, 95),
+                    availableItems[itemSlots[itemIndexToDrag]].name);
             }
         }
-        if (hoveringOverIndex > -1) && itemSlots[hoveringOverIndex] > -1 && itemIndexToDrag < 0)
+        if (hoveringOverIndex > -1 && itemSlots[hoveringOverIndex] > -1 && itemIndexToDrag < 0)
                 {
             GUI.Box(new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y - 30, 100,
-                25), availableItems[itemSlots[hoveringOverIndex]], itemName);
+                25), availableItems[itemSlots[hoveringOverIndex]].name);
         }
 
         if (!showInventory)
@@ -240,13 +239,11 @@ public class SC_InventorySystem : MonoBehaviour
             {
                 GUI.color = new Color(0, 0, 0, 0.84f);
                 GUI.Label(new Rect(Screen.width / 2 - 75 + 1, Screen.height / 2 - 50 + 1, 150, 20),
-"Press 'F' to pick '" + detectedItem.itemName + "");
+"Press 'F' to pick '" + detectedItem.name + "");
                 GUI.color = Color.green;
                 GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height / 2 - 50, 150, 20), "Press 'F' to " +
-                    "pick'" + detectedItem.itemName + "");
+                    "pick'" + detectedItem.name + "");
             }
         }
     }
-}}}
 }
-*/
