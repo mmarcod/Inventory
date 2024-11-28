@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SC_PickItem : MonoBehaviour
 {
-    public string itenName = "Some Item";
+    public string itemName = "Sphere"; //Each item must have an unique name
     public Texture itemPreview;
 
     void Start()
